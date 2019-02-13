@@ -56,7 +56,9 @@ console.log(quotes);
 
 
 function getRandomQuote () {
-  return quotes[Math.floor((Math.random() * 4) + 1)];
+   var randomQuote = Math.floor((Math.random() * 4) + 0);
+   return quotes[randomQuote]
+
 };
 
 getRandomQuote();
@@ -71,7 +73,18 @@ getRandomQuote();
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
-printQuote
+function printQuote () {
+  var quote = getRandomQuote();
+  var div = document.getElementById('output');
+  div.innerHTML = message;
+
+  var message = '<p>Hello + quote.quote </p>'
+  print(message);
+} 
+
+   
+
+
 
 /***
   When the "Show another quote" button is clicked, the event listener 
