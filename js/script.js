@@ -44,9 +44,6 @@ var quotes = [
   }
 ];
 
-console.log(quotes);
-
-
 /***
   Create the `getRandomQuote` function to:
    - generate a random number 
@@ -55,13 +52,11 @@ console.log(quotes);
 ***/
 
 
-function getRandomQuote () {
+function getRandomQuote() {
    var randomQuote = Math.floor((Math.random() * 4) + 0);
    return quotes[randomQuote]
-
 };
-
-getRandomQuote();
+ getRandomQuote();
 
 /***
   Create the `printQuote` function to: 
@@ -73,19 +68,22 @@ getRandomQuote();
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
-function printQuote () {
+var quote;
+var source;
+var title;
+
+function printQuote() {
   var quote = getRandomQuote();
-  var div = document.getElementById('output');
-  div.innerHTML = message;
-
-  var message = '<p>Hello + quote.quote </p>'
-  print(message);
+  html = "quote[i].quote + quote[i].source + quote[i].title"
+  for (var i = 0; i <quotes.length; i +=1) {
+    quote = quotes[i].quote;
+    source = quotes[i].source;
+    title = quotes[i].title;
+  }
+  if (title === '') {
+    print(html = "quote[i].quote + quote[i].source" )
+  }
 } 
-
-   
-
-
-
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
