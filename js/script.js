@@ -74,7 +74,7 @@ var title;
 
 function printQuote() {
   var quote = getRandomQuote();
-  html = "quote[i].quote + quote[i].source + quote[i].title"
+  html = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
   for (var i = 0; i <quotes.length; i +=1) {
     quote = quotes[i].quote;
     source = quotes[i].source;
@@ -82,6 +82,12 @@ function printQuote() {
   }
   if (title === '') {
     print(html = "quote[i].quote + quote[i].source" )
+  } else 
+  if (source === '') {
+    print(html = "quote[i].quote + ', ' + quote.title")
+  } else 
+  if (title == '') && (source = '') {
+    print(htmel = "quote[i].quote")
   }
 } 
 /***
