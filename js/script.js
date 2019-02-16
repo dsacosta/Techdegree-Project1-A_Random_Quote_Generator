@@ -71,25 +71,29 @@ function getRandomQuote() {
 var quote;
 var source;
 var title;
+var stringOfQuoteProperties;
 
 function printQuote() {
   var quote = getRandomQuote();
-  html = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
   for (var i = 0; i <quotes.length; i +=1) {
     quote = quotes[i].quote;
     source = quotes[i].source;
     title = quotes[i].title;
   }
   if (title === '') {
-    print(html = "quote[i].quote + quote[i].source" )
+    stringOfQuoteProperties = "quote[i].quote + quote[i].source"
   } else 
   if (source === '') {
-    print(html = "quote[i].quote + ', ' + quote.title")
+    stringOfQuoteProperties = "quote[i].quote + ', ' + quote.title"
   } else 
-  if (title == '') && (source = '') {
-    print(htmel = "quote[i].quote")
-  }
+  if ((title == '') && (source = '')) {
+    stringOfQuoteProperties = "quote[i].quote"
+  } else
+    stringOfQuoteProperties = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
 } 
+document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+
+
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
