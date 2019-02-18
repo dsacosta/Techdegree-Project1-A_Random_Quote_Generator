@@ -74,39 +74,45 @@ var title;
 var stringOfQuoteProperties;
 
 function printQuote() {
-  var quoteRandom = getRandomQuote();
-  document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
-}
-  for (var i = 0; i <quotes.length; i +=1) {
-    quote = quotes[i].quote;
-    source = quotes[i].source;
-    title = quotes[i].title;
+  var quoteR = getRandomQuote();
 
+  stringOfQuoteProperties += '<p>' + quoteR.quote + 
+  '<span class="citation">' + quoteR.source + '</span>' +
+  '<span class="year">' + quoteR.title + '</span>' +
+  '</p>';
+
+  document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+} 
+  // for (var i = 0; i <quoteR.length; i +=1) {
+  //   quote = quoteR[i].quote;
+  //   source = quoteR[i].source;
+  //   title = quoteR[i].title;
+  // }
  //print the quote to html page
     // stringOfQuoteProperties += '<p>' + quote + 
     //   '<span class="citation">' + source + '</span>' +
     //   '<span class="year">' + title + '</span>' +
     //   '</p>';
 
-  if (title === '') {
-    stringOfQuoteProperties = '<p>' + quote + 
-      '<span class="citation">' + source + '</span>' +
-      '</p>';
-  } else 
-  if (source === '') {
-    stringOfQuoteProperties = '<p>' + quote + 
-      '<span class="year">' + title + '</span>' +
-      '</p>';
-  } else 
-  if ((title == '') && (source = '')) {
-    stringOfQuoteProperties = '<p>' + quote + 
-      '</p>';
-  } else
-    stringOfQuoteProperties = '<p>' + quote + 
-    '<span class="citation">' + source + '</span>' +
-    '<span class="year">' + title + '</span>' +
-    '</p>';
-} 
+//   if (title === '') {
+//     stringOfQuoteProperties += '<p>' + quote + 
+//       '<span class="citation">' + source + '</span>' +
+//       '</p>';
+//   } else 
+//   if (source === '') {
+//     stringOfQuoteProperties = '<p>' + quote + 
+//       '<span class="year">' + title + '</span>' +
+//       '</p>';
+//   } else 
+//   if ((title == '') && (source = '')) {
+//     stringOfQuoteProperties = '<p>' + quote + 
+//       '</p>';
+//   } else
+//     stringOfQuoteProperties = '<p>' + quote + 
+//     '<span class="citation">' + source + '</span>' +
+//     '<span class="year">' + title + '</span>' +
+//     '</p>';
+// } 
 
 
 // document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
