@@ -83,31 +83,32 @@ function printQuote() {
     title = quotes[i].title;
 
  //print the quote to html page
-    stringOfQuoteProperties += '<p>' + quote + 
+    // stringOfQuoteProperties += '<p>' + quote + 
+    //   '<span class="citation">' + source + '</span>' +
+    //   '<span class="year">' + title + '</span>' +
+    //   '</p>';
+
+  if (title === '') {
+    stringOfQuoteProperties = '<p>' + quote + 
       '<span class="citation">' + source + '</span>' +
+      '</p>';
+  } else 
+  if (source === '') {
+    stringOfQuoteProperties = '<p>' + quote + 
       '<span class="year">' + title + '</span>' +
       '</p>';
-  }
+  } else 
+  if ((title == '') && (source = '')) {
+    stringOfQuoteProperties = '<p>' + quote + 
+      '</p>';
+  } else
+    stringOfQuoteProperties = '<p>' + quote + 
+    '<span class="citation">' + source + '</span>' +
+    '<span class="year">' + title + '</span>' +
+    '</p>';
+} 
 
 
-
-
-
-//   if (title === '') {
-//     html = `<p class="quote"> ${quote} </p>
-//     <p class="source"> [source here]
-//       <span class="citation"> [citation here] </span>
-//       <span class="year"> [year here] </span>
-//     </p>`;
-//   } else 
-//   if (source === '') {
-//     html = "quote[i].quote + ', ' + quote.title"
-//   } else 
-//   if ((title == '') && (source = '')) {
-//     html = "quote[i].quote"
-//   } else
-//     html = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
-// } 
 // document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
 
 
