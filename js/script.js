@@ -72,16 +72,6 @@ var stringOfQuoteProperties;
 
 function printQuote() {
   var quoteR = getRandomQuote();
-
-  // for (var i = 0; i < 4; i +=1) {
-  //   quote = quoteR.quote;
-  //   source = quoteR.source;
-  //   title = quoteR.title;
-
-  //  stringOfQuoteProperties = '<p>' + quoteR.quote + 
-  // '<span class="citation">' + quoteR.source + '</span>' +
-  // '<span class="year">' + quoteR.title + '</span>' +
-  // '</p>';
  
 if (quoteR.title === '') {
         stringOfQuoteProperties = '<p>' + quoteR.quote + 
@@ -105,67 +95,7 @@ if (quoteR.title === '') {
   
 };
     
-    // if (quoteR.title === '') {
-    //     stringOfQuoteProperties = '<p>' + quoteR.quote + 
-    //       '<span class="citation">' + quoteR.source + '</span>' +
-    //       '</p>';
-    //   } else if (quoteR.source === '') {
-    //     stringOfQuoteProperties = '<p>' + quoteR.quote + 
-    //       '<span class="year">' + quoteR.title + '</span>' +
-    //       '</p>';
-    //   } else if ((quoteR.title == '') && (quoteR.source = '')) {
-    //     stringOfQuoteProperties = '<p>' + quoteR.quote + 
-    //       '</p>';
-    //   } else {
-    //   stringOfQuoteProperties = '<p>' + quoteR.quote + 
-    //   '<span class="citation">' + quoteR.source + '</span>' +
-    //   '<span class="year">' + quoteR.title + '</span>' +
-    //   '</p>';
-    //   }
- 
-  
-  // stringOfQuoteProperties = '<p>' + quote + 
-  // '<span class="citation">' + source + '</span>' +
-  // '<span class="year">' + title + '</span>' +
-  // '</p>';
-  // }
-
-  // if (title === '') {
-  //   stringOfQuoteProperties = '<p>' + quote + 
-  //     '<span class="citation">' + source + '</span>' +
-  //     '</p>';
-  // } else if (source === '') {
-  //   stringOfQuoteProperties = '<p>' + quote + 
-  //     '<span class="year">' + title + '</span>' +
-  //     '</p>';
-  // } else if ((title == '') && (source = '')) {
-  //   stringOfQuoteProperties = '<p>' + quote + 
-  //     '</p>';
-  // } else {
-  // stringOfQuoteProperties = '<p>' + quoteR.quote + 
-  // '<span class="citation">' + quoteR.source + '</span>' +
-  // '<span class="year">' + quoteR.title + '</span>' +
-  // '</p>';
-
-  // document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
-
-  // for (var i = 0; i <quoteR.length; i +=1) {
-  //   quote = quoteR[i].quote;
-  //   source = quoteR[i].source;
-  //   title = quoteR[i].title;
-  // }
- //print the quote to html page
-    // stringOfQuoteProperties += '<p>' + quote + 
-    //   '<span class="citation">' + source + '</span>' +
-    //   '<span class="year">' + title + '</span>' +
-    //   '</p>';
-
-  
-
-
-// document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
-
-
+   
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
