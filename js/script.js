@@ -20,27 +20,32 @@ var quotes = [
   {
    quote: 'Its not a faith in technology. Its faith in people.', 
    source: 'Steve Jobs', 
-   title: 'Apple CEO'
+   title: 'Apple CEO',
+   twitter: ''
   },
   {
   quote: 'Our industry does not respect tradition - it only respects innovation.', 
   source: 'Satya Nadella',
   title: 'Microsoft CEO'
+  twitter: '@satyandadella'
   },
   {
   quote: 'For me, it matters that we drive technology as an equalizing force, as an enabler for everyone around the world.', 
   source: 'Sundar Pichai', 
-  title: 'Google CEO'
+  title: 'Google CEO',
+  twitter: '@sundarpichai'
   },
   {
   quote: 'Stone Age. Bronze Age. Iron Age. We define entire epics of humanity by the technology they use.', 
   source: 'Reed Hastings', 
-  title: 'Netflix CEO'
+  title: 'Netflix CEO',
+  twitter: '@reedhastings'
   },
   {
   quote: 'Engineering is the closest thing to magic that exists in the world.', 
   source: 'Elon Musk', 
-  title: 'SpaceX CEO'
+  title: 'SpaceX CEO',
+  twitter: '@elonmusk'
   }
 ];
 /***
@@ -78,6 +83,12 @@ if (quoteR.title === '') {
         } else if ((quoteR.title == '') && (quoteR.source = '')) {
         stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + 
           '</p>';
+          
+       
+       
+       
+       
+       
         } else {
         stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' 
         + '<p class="source">' + quoteR.source + ' ' + '<span class="title">' 
