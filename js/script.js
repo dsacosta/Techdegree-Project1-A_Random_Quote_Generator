@@ -54,9 +54,9 @@ var quotes = [
 
 function getRandomQuote() {
    var randomQuote = Math.floor((Math.random() * 4) + 0);
-   return quotes[randomQuote]
+   return quotes[randomQuote];
 };
- getRandomQuote();
+//  getRandomQuote();
 
 /***
   Create the `printQuote` function to: 
@@ -74,24 +74,41 @@ var title;
 var stringOfQuoteProperties;
 
 function printQuote() {
-  var quote = getRandomQuote();
+  var quoteRandom = getRandomQuote();
+  document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+}
   for (var i = 0; i <quotes.length; i +=1) {
     quote = quotes[i].quote;
     source = quotes[i].source;
     title = quotes[i].title;
+
+ //print the quote to html page
+    stringOfQuoteProperties += '<p>' + quote + 
+      '<span class="citation">' + source + '</span>' +
+      '<span class="year">' + title + '</span>' +
+      '</p>';
   }
-  if (title === '') {
-    stringOfQuoteProperties = "quote[i].quote + quote[i].source"
-  } else 
-  if (source === '') {
-    stringOfQuoteProperties = "quote[i].quote + ', ' + quote.title"
-  } else 
-  if ((title == '') && (source = '')) {
-    stringOfQuoteProperties = "quote[i].quote"
-  } else
-    stringOfQuoteProperties = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
-} 
-document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+
+
+
+
+
+//   if (title === '') {
+//     html = `<p class="quote"> ${quote} </p>
+//     <p class="source"> [source here]
+//       <span class="citation"> [citation here] </span>
+//       <span class="year"> [year here] </span>
+//     </p>`;
+//   } else 
+//   if (source === '') {
+//     html = "quote[i].quote + ', ' + quote.title"
+//   } else 
+//   if ((title == '') && (source = '')) {
+//     html = "quote[i].quote"
+//   } else
+//     html = "quote[i].quote + quote[i].source + ', ' + quote[i].title"
+// } 
+// document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
 
 
 /***
