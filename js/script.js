@@ -20,12 +20,12 @@ var quotes = [
   {
    quote: 'Its not a faith in technology. Its faith in people.', 
    source: 'Steve Jobs', 
-   title: "Apple CEO"
+   title: 'Apple CEO'
   },
   {
   quote: 'Our industry does not respect tradition - it only respects innovation.', 
   source: 'Satya Nadella',
-  title: "Microsoft CEO"
+  title: 'Microsoft CEO'
   },
   {
   quote: 'For me, it matters that we drive technology as an equalizing force, as an enabler for everyone around the world.', 
@@ -40,24 +40,19 @@ var quotes = [
   {
   quote: 'Engineering is the closest thing to magic that exists in the world.', 
   source: 'Elon Musk', 
-  title: ''
+  title: 'SpaceX CEO'
   }
 ];
-
 /***
   Create the `getRandomQuote` function to:
    - generate a random number 
    - use the random number to `return` a random quote object from the 
      `quotes` array.
 ***/
-
-
 function getRandomQuote() {
    var randomQuote = Math.floor((Math.random() * 5) + 0);
    return quotes[randomQuote];
 };
-//  getRandomQuote();
-
 /***
   Create the `printQuote` function to: 
    - call the `getRandomQuote` function and assign it to a variable.
@@ -67,35 +62,31 @@ function getRandomQuote() {
      they are added to the HTML string.
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
 var stringOfQuoteProperties;
 
 function printQuote() {
   var quoteR = getRandomQuote();
  
 if (quoteR.title === '') {
-        stringOfQuoteProperties = '<p>' + quoteR.quote + 
-          '<span class="citation">' + quoteR.source + '</span>' +
+        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
+          '<span class="source">' + quoteR.source + '</span>' +
           '</p>';
-      } else if (quoteR.source === '') {
-        stringOfQuoteProperties = '<p>' + quoteR.quote + 
-          '<span class="year">' + quoteR.title + '</span>' +
+        } else if (quoteR.source === '') {
+        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
+          '<span class="title">' + quoteR.title + '</span>' +
           '</p>';
-      } else if ((quoteR.title == '') && (quoteR.source = '')) {
-        stringOfQuoteProperties = '<p>' + quoteR.quote + 
+        } else if ((quoteR.title == '') && (quoteR.source = '')) {
+        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + 
           '</p>';
-      } else {
-      stringOfQuoteProperties = '<p>' + quoteR.quote + 
-      '<span class="citation">' + quoteR.source + '</span>' +
-      '<span class="year">' + quoteR.title + '</span>' +
-      '</p>';
-      }
+        } else {
+        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' 
+        + '<p class="source">' + quoteR.source + ' ' + '<span class="title">' 
+        + ', ' + '</span>' + quoteR.title + '</p>';
+}  
 
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
   
-};
-    
-   
+}; 
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
