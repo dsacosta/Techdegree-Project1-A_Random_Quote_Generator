@@ -54,17 +54,17 @@ body {
   content: "—";
 }
 
-.citation {
+.title {
   font-style: italic;
 }
 
-.citation:before {
-  content: ", ";
+.title:before {
+  /* content: ", "; */
   font-style: normal;
 }
 
-.year:before {
-  content: ", ";
+.twitter:before {
+  content: " ";
   font-style: normal;
 }
 
