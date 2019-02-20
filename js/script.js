@@ -43,7 +43,7 @@ var quotes = [
 
 /***
   Create a function that produces a random number then stores that number in a variable. The variable is then
-  used to return a random quote by using the variable as the index value of the array. 
+  used to return a random quote by using the variable as the index value of the quotes[] array. 
 ***/
 
 function getRandomQuote() {
@@ -51,13 +51,16 @@ function getRandomQuote() {
    return quotes[randomQuote];
 };
 /***
-Create a function that prints a string and injects that string to the html document. This string is to print
+Create a function that prints a string based on whether or not certain properties from
+the quotes[] array exist. This html string will then be appended to the 'quote-box' section of 
+the html document using innerhtml. 
 if 
 ***/
 var stringOfQuoteProperties;
 
 function printQuote() {
   var quoteR = getRandomQuote();
+  randomColor();
  
 if (quoteR.title === '') {
         stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
@@ -83,15 +86,29 @@ if (quoteR.title === '') {
 
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
       
-}; 
+
+
 /***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
+ Function that randomizes the background color of an html document
+ ***/
+
+function randomColor() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var rbgColor = 'rgb(' + x + ',' + y + ',' + z + ')'; 
+
+// var myElement = document.querySelector("#body");
+// myElement.getElementsByClassName.backgroundColor = rbgColor;
+document.body.style.background = rbgColor;
+}
+
+}
+
+/***
+  When the button "show another quote" is clicked, it will call the printQuote function
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
