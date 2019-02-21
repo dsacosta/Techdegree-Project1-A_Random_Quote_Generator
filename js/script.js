@@ -10,7 +10,7 @@ twitter handle if it exists.
 
 var quotes = [
   {
-   quote: "If you don't innovate fast, disrupt your industry, disrupt yourself, yourself, you'll be left behind.", 
+   quote: "If you don't innovate fast, disrupt your industry, disrupt yourself, you'll be left behind.", 
    source: 'John Chambers', 
    title: '',
    twitter: ''
