@@ -10,8 +10,8 @@ twitter handle if it exists.
 
 var quotes = [
   {
-   quote: 'Its not a faith in technology. Its faith in people.', 
-   source: 'Steve Jobs', 
+   quote: "If you don't innovate fast, disrupt your industry, disrupt yourself, yourself, you'll be left behind.", 
+   source: 'John Chambers', 
    title: '',
    twitter: ''
   },
@@ -102,7 +102,8 @@ document.body.style.background = rbgColor;
   }
 }
 /***
-  When the button "show another quote" is clicked, it will call the printQuote function
+When the button "show another quote" is clicked, it will call the printQuote function
+and call the random quote and random color function.
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
