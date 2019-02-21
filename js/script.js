@@ -107,22 +107,12 @@ document.body.style.background = rbgColor;
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-// Refesh page
-
-window.onload = function(){
-  var button = document.getElementById('loadQuote'),
-    form = button.form;
-
-  form.addEventListener("submit", function(){
-    return false;
-  })
-
-  var times = 100;   //Here put the number of times you want to auto submit
-  (function submit(){
-    if(times == 0) return;
-    form.submit();
-    times--;
-    setTimeout(submit, 1000);   //Each second
-  })(); 
+/*** Refesh page automatically after 3 seconds. Function is called when the "show another
+another quote" button is clicked.
+***/
+function myFunction() {
+  setInterval(function() {
+  printQuote(); }, 3000);
 }
+
 
