@@ -4,40 +4,46 @@ FSJS project 1 - A Random Quote Generator
 ******************************************/
 
 /*** 
-Create an array stored in a variable called "quotes". The array contains objects. The objects inside the array contains quote, source, title and 
-twitter handle if it exists.
+Create an array stored in a variable called "quotes". The array contains objects. The objects inside the array 
+contains quote, source, title and twitter handle.
 ***/
 
 var quotes = [
   {
-   quote: "If you don't innovate fast, disrupt your industry, disrupt yourself, you'll be left behind.", 
-   source: 'John Chambers', 
-   title: '',
-   twitter: ''
+    quote: "If you don't innovate fast, disrupt your industry, disrupt yourself, you'll be left behind.", 
+    source: 'John Chambers', 
+    title: '',
+    twitter: ''
   },
   {
-  quote: 'Our industry does not respect tradition - it only respects innovation.', 
-  source: 'Satya Nadella',
-  title: 'Microsoft CEO',
-  twitter: '@satyandadella'
+    quote: 'Our industry does not respect tradition - it only respects innovation.', 
+    source: 'Satya Nadella',
+    title: 'Microsoft CEO',
+    twitter: '@satyandadella'
   },
   {
-  quote: 'For me, it matters that we drive technology as an equalizing force, as an enabler for everyone around the world.', 
-  source: 'Sundar Pichai', 
-  title: 'Google CEO',
-  twitter: '@sundarpichai'
+    quote: 'For me, it matters that we drive technology as an equalizing force, as an enabler for everyone around the world.', 
+    source: 'Sundar Pichai', 
+    title: 'Google CEO',
+    twitter: '@sundarpichai'
   },
   {
-  quote: 'Stone Age. Bronze Age. Iron Age. We define entire epics of humanity by the technology they use.', 
-  source: 'Reed Hastings', 
-  title: 'Netflix CEO',
-  twitter: '@reedhastings'
+    quote: 'Stone Age. Bronze Age. Iron Age. We define entire epics of humanity by the technology they use.', 
+    source: 'Reed Hastings', 
+    title: 'Netflix CEO',
+    twitter: '@reedhastings'
   },
   {
-  quote: 'Engineering is the closest thing to magic that exists in the world.', 
-  source: 'Elon Musk', 
-  title: 'SpaceX CEO',
-  twitter: '@elonmusk'
+    quote: 'Engineering is the closest thing to magic that exists in the world.', 
+    source: 'Elon Musk', 
+    title: 'SpaceX CEO',
+    twitter: '@elonmusk'
+  },
+  {
+    quote: 'Have the courage to follow your heart and intuition. They somehow know what you truly want to become.',
+    source: 'Steve Jobs',
+    title: 'Apple CEO', 
+    twitter: ''
   }
 ];
 
@@ -47,7 +53,7 @@ var quotes = [
 ***/
 
 function getRandomQuote() {
-   var randomQuote = Math.floor((Math.random() * 5) + 0);
+   var randomQuote = Math.floor((Math.random() * 6) + 0);
    return quotes[randomQuote];
   
 };
@@ -55,34 +61,34 @@ function getRandomQuote() {
 Create a function that prints a string based on whether or not certain properties from
 the quotes[] array exist. This html string will then be appended to the 'quote-box' section of 
 the html document using innerhtml. The random color function is also called to randomize 
-the backgroung color when the button is clicked. 
+the backgroung color. 
 ***/
 var stringOfQuoteProperties;
 
 function printQuote() {
-  var quoteR = getRandomQuote();
+  var quoteRandomized = getRandomQuote();
   randomColor();
   
 
-if (quoteR.title === '') {
-        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
+if (quoteRandomized.title === '') {
+        stringOfQuoteProperties = '<p class="quote">' + quoteRandomized.quote + '</p>' + 
           '<span class="source">' + quoteR.source + '</span>' + '</p>';
-        } else if (quoteR.source === '') {
-        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
-          '<span class="title">' + quoteR.title + '</span>' +
+        } else if (quoteRandomized.source === '') {
+        stringOfQuoteProperties = '<p class="quote">' + quoteRandomized.quote + '</p>' + 
+          '<span class="title">' + quoteRandomized.title + '</span>' +
           '</p>';
-        } else if ((quoteR.title == '') && (quoteR.source = '')) {
-        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + 
+        } else if ((quoteRandomized.title == '') && (quoteRandomized.source = '')) {
+        stringOfQuoteProperties = '<p class="quote">' + quoteRandomized.quote + 
           '</p>';
-        } else if (quoteR.twitter === '') {
-          stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' 
-          + '<p class="source">' + quoteR.source + ' ' + '<span class="title">' 
-          + ', ' + quoteR.title + '</span>' + '</p>';
+        } else if (quoteRandomized.twitter === '') {
+          stringOfQuoteProperties = '<p class="quote">' + quoteRandomized.quote + '</p>' 
+          + '<p class="source">' + quoteRandomized.source + ' ' + '<span class="title">' 
+          + ', ' + quoteRandomized.title + '</span>' + '</p>';
         } else {
-        stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' 
-        + '<p class="source">' + quoteR.source + ' ' + '<span class="title">' 
-        + ', ' + quoteR.title + '</span>' + '    '  + '<br>' + 'twitter:'
-        + '<span class="twitter">' + quoteR.twitter + '</span>' + '</p>';
+        stringOfQuoteProperties = '<p class="quote">' + quoteRandomized.quote + '</p>' 
+        + '<p class="source">' + quoteRandomized.source + ' ' + '<span class="title">' 
+        + ', ' + quoteRandomized.title + '</span>' + '    '  + '<br>' + 'twitter:'
+        + '<span class="twitter">' + quoteRandomized.twitter + '</span>' + '</p>';
         }
 
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
