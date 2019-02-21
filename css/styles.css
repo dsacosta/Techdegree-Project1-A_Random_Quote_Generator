@@ -48,6 +48,7 @@ body {
   line-height: 1.1;
   text-align: right;
   margin-right: 4em;
+  display: block;
 }
 
 .source:before {
@@ -78,7 +79,7 @@ body {
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
-  background-color: #36b55c;
+  background-color: #0a0a0a;
   padding: 15px 0;
   transition: .5s ;
 }

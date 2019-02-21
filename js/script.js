@@ -12,7 +12,7 @@ var quotes = [
   {
    quote: 'Its not a faith in technology. Its faith in people.', 
    source: 'Steve Jobs', 
-   title: 'Apple CEO',
+   title: '',
    twitter: ''
   },
   {
@@ -49,23 +49,24 @@ var quotes = [
 function getRandomQuote() {
    var randomQuote = Math.floor((Math.random() * 5) + 0);
    return quotes[randomQuote];
+  
 };
 /***
 Create a function that prints a string based on whether or not certain properties from
 the quotes[] array exist. This html string will then be appended to the 'quote-box' section of 
-the html document using innerhtml. 
-if 
+the html document using innerhtml. The random color function is also called to randomize 
+the backgroung color when the button is clicked. 
 ***/
 var stringOfQuoteProperties;
 
 function printQuote() {
   var quoteR = getRandomQuote();
   randomColor();
- 
+  
+
 if (quoteR.title === '') {
         stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
-          '<span class="source">' + quoteR.source + '</span>' +
-          '</p>';
+          '<span class="source">' + quoteR.source + '</span>' + '</p>';
         } else if (quoteR.source === '') {
         stringOfQuoteProperties = '<p class="quote">' + quoteR.quote + '</p>' + 
           '<span class="title">' + quoteR.title + '</span>' +
@@ -85,11 +86,10 @@ if (quoteR.title === '') {
         }
 
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
-      
-
 
 /***
- Function that randomizes the background color of an html document
+ Function that randomizes the background color of an html document and adds it
+ back to the html document 
  ***/
 
 function randomColor() {
@@ -98,17 +98,31 @@ function randomColor() {
   var z = Math.floor(Math.random() * 256);
   var rbgColor = 'rgb(' + x + ',' + y + ',' + z + ')'; 
 
-// var myElement = document.querySelector("#body");
-// myElement.getElementsByClassName.backgroundColor = rbgColor;
 document.body.style.background = rbgColor;
+  }
 }
-
-}
-
 /***
   When the button "show another quote" is clicked, it will call the printQuote function
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+// Refesh page
+
+window.onload = function(){
+  var button = document.getElementById('loadQuote'),
+    form = button.form;
+
+  form.addEventListener("submit", function(){
+    return false;
+  })
+
+  var times = 100;   //Here put the number of times you want to auto submit
+  (function submit(){
+    if(times == 0) return;
+    form.submit();
+    times--;
+    setTimeout(submit, 1000);   //Each second
+  })(); 
+}
+
